@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    font-family: 'Open Sans';
+}
+
+.slider-item:nth-child(1) {
+    animation: slide-left 0.2s ease-in-out forwards;
+}
+
+.slider-item:nth-child(2) {
+    animation: slide-center 0.5s ease-in-out forwards;
+}
+
+.slider-item:nth-child(3) {
+    animation: slide-center 0.5s ease-in-out forwards;
+}
+
+.slider-item:nth-child(4) {
+    opacity: 0;
+    animation: slide-right 0.5s ease-in-out forwards;
+}
+
+.slider-item:nth-child(n + 5) {
+    opacity: 0;
+}
+
+@keyframes slide-left {
+    100% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes slide-center {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(calc(-100% - 32px));
+    }
+}
+
+@keyframes slide-right {
+    0% {
+        opacity: 0;
+        transform: translateX(-200%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(calc(-100% - 32px));
+    }
+}
+
+.text-shawdow-no1 {
+    text-shadow: 1px 1px 0 #4a90e2, -1px 1px 0 #4a90e2, -1px -1px 0 #4a90e2, 1px -1px 0 #4a90e2;
+}
+
+.text-shawdow-no2 {
+    text-shadow: 1px 1px 0 #50e3c2, -1px 1px 0 #50e3c2, -1px -1px 0 #50e3c2, 1px -1px 0 #50e3c2;
+}
+
+.text-shawdow-no3 {
+    text-shadow: 1px 1px 0 #e35050, -1px 1px 0 #e35050, -1px -1px 0 #e35050, 1px -1px 0 #e35050;
+}
+
+.slick-next::before,
+.slick-prev::before {
+    font-size: 38px;
+}
+
+.slick-next {
+    right: -20px;
+}
+
+.slick-prev {
+    left: -20px;
+}
+
+.text-shawdow {
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5), -1px 1px 0 rgba(0, 0, 0, 0.5), -1px -1px 0 rgba(0, 0, 0, 0.5),
+        1px -1px 0 rgba(0, 0, 0, 0.5) !important;
+}
+
+#week-rank {
+    height: calc(68vh - 90px);
+}
+
+input[type='range'] {
+    -webkit-appearance: none;
+    cursor: pointer;
+    width: 100%;
+    height: 4px;
+    background: #fff;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: 0.2s;
+    transition: height 0.4s;
+}
+
+input[type='range']:hover {
+    height: 6px;
+}
+
+input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    background: #04aa6d;
+    cursor: pointer;
+}
